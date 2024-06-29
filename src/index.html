@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&family=Roboto&family=Raleway&family=Raleway:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <title>To-do List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-main">
+          <div class="logo">TO DO LIST</div>
+          <div class="sidebar--account-info hidden">
+            <img src="#" alt="User profile" class="prof-pic" />
+            <h2 class="greeting">Hello, <span class="greeting-name"></span></h2>
+          </div>
+          <div class="sidebar--btn-logs">
+            <button class="btn-log btn-login hidden">Sign in</button>
+            <button class="btn-log btn-logout hidden">Sign out</button>
+          </div>
+        </div>
+
+        <div class="sidebar-nav">
+          <div class="nav--tasks">
+            <div tabindex="0" class="nav-task tasks-all">
+              <span class="emoji">🔥</span> All tasks
+            </div>
+            <div tabindex="0" class="nav-task tasks-today">
+              <span class="emoji">📅</span> Today
+            </div>
+            <div tabindex="0" class="nav-task tasks-upcoming">
+              <span class="emoji">⌛</span> Upcoming
+            </div>
+            <div tabindex="0" class="nav-task tasks-finished">
+              <span class="emoji">✅</span>
+              Finished
+            </div>
+            <div tabindex="0" class="nav-task tasks-high-priority">
+              <span class="emoji">🔴</span>
+              High Priority
+            </div>
+            <div tabindex="0" class="nav-task tasks-medium-priority">
+              <span class="emoji">🟡</span>
+              Medium Priority
+            </div>
+            <div tabindex="0" class="nav-task tasks-low-priority">
+              <span class="emoji">🟢</span>
+              Low Priority
+            </div>
+          </div>
+          <ul class="nav--projects"></ul>
+          <div tabindex="0" class="nav--notes">
+            <span class="emoji">📝</span>Notes
+          </div>
+
+          <div class="hamburger-icon">
+            <span class="material-symbols-outlined"> menu </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div class="content-title">All Tasks</div>
+        <div class="content-display"></div>
+
+        <button type="button" class="btn-add">
+          <span class="material-symbols-outlined"> add </span>
+        </button>
+      </div>
+
+      <div class="modal hidden">
+        <div class="modal-header">
+          <h1 class="modal-title">Create a new...</h1>
+          <nav class="modal-nav">
+            <ul role="tablist">
+              <li
+                role="tab"
+                aria-label="Show add task panel"
+                tabindex="0"
+                class="modal-link modal-link--task modal-link--active"
+              >
+                Task
+              </li>
+              <li
+                role="tab"
+                aria-label="Show add project panel"
+                tabindex="0"
+                class="modal-link modal-link--project"
+              >
+                Project
+              </li>
+              <li
+                role="tab"
+                aria-label="Show add note panel"
+                tabindex="0"
+                class="modal-link modal-link--note"
+              >
+                Note
+              </li>
+            </ul>
+          </nav>
+          <span class="btn-close-modal material-symbols-outlined">close</span>
+        </div>
+        <div class="modal-content-wrapper" role="tabpanel">
+          <!--  NEW TASK FORM -->
+
+          <form action="" class="modal-content add-new--task">
+            <textarea
+              name="new-task--title"
+              id="new-task--title"
+              class="new-task--form-element"
+              minlength="1"
+              maxlength="60"
+              placeholder="Go to the doctor's office"
+              required
+            ></textarea>
+            <textarea
+              name="new-task--details"
+              id="new-task--details"
+              class="new-task--form-element"
+              minlength="1"
+              placeholder="Appointment with Dr. Chiu at Somerset Hospital, 10am"
+            ></textarea>
+            <div class="new-task--form-element new-task--task-date-wrapper">
+              <label for="new-task--date"> Due Date: </label>
+              <input
+                type="date"
+                class="new-task--form-input"
+                id="new-task--date"
+                name="new-task--date"
+                value=""
+                required
+              />
+            </div>
+            <div class="new-task--form-element new-task--task-priority-wrapper">
+              <legend class="new-task--priority-legend">Priority:</legend>
+
+              <fieldset class="new-task--priority-fieldset">
+                <label
+                  for="new-task--priority-low"
+                  class="new-task--priority-label priority-low"
+                  >Low</label
+                >
+                <input
+                  type="radio"
+                  class="new-task--form-input new-task--priority-input"
+                  id="new-task--priority-low"
+                  name="new-task--priority-low"
+                  value="low"
+                />
+                <!--  -->
+                <label
+                  for="new-task--priority-medium"
+                  class="new-task--priority-label priority-medium priority-active"
+                  >Medium</label
+                >
+                <input
+                  type="radio"
+                  class="new-task--form-input new-task--priority-input"
+                  id="new-task--priority-medium"
+                  name="new-task--priority-medium"
+                  value="medium"
+                />
+                <!--  -->
+                <label
+                  for="new-task--priority-high"
+                  class="new-task--priority-label priority-high"
+                  >High</label
+                >
+                <input
+                  type="radio"
+                  class="new-task--form-input new-task--priority-input"
+                  id="new-task--priority-high"
+                  name="new-task--priority-high"
+                  value="high"
+                />
+              </fieldset>
+            </div>
+            <div class="new-task--form-element new-task--task-project-wrapper">
+              <label for="new-task--project">Project:</label>
+              <select
+                name="new-task--project"
+                id="new-task--project"
+                class="select-project"
+              >
+                <option value="Home" data-id="123">Home</option>
+              </select>
+            </div>
+            <div class="new-task--form-element new-task--task-status">
+              <label for="new-task--status">Status:</label
+              ><select name="new-task--status" id="new-task--status">
+                <option value="on-going">On-going</option>
+                <option value="finished">Finished</option>
+              </select>
+            </div>
+            <button class="btn-submit submit--new-task" type="submit">
+              Add Task
+            </button>
+          </form>
+
+          <!-- NEW PROJECT FORM -->
+
+          <form class="modal-content add-new--project hidden">
+            <textarea
+              name="new-project--title"
+              id="new-project--title"
+              minlength="1"
+              maxlength="60"
+              placeholder="Europe Vacation 2025"
+              required
+            ></textarea>
+            <button class="btn-submit submit--new-project" type="submit">
+              Add Project
+            </button>
+          </form>
+
+          <!-- NEW NOTE FORM -->
+
+          <form class="modal-content add-new--note hidden">
+            <textarea
+              name="new-note--title"
+              id="new-note--title"
+              minlength="1"
+              maxlength="100"
+              placeholder="Title"
+            ></textarea>
+            <textarea
+              name="new-note--details"
+              id="new-note--details"
+              minlength="1"
+              placeholder="Details"
+            ></textarea>
+            <button class="btn-submit submit--new-note" type="submit">
+              Add Note
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-details hidden"></div>
+    </div>
+    <footer>
+      <a
+        href="https://github.com/renchester"
+        target="_blank"
+        class="footer-link"
+        ><img
+          src="img/github-icon.png"
+          alt="Github icon"
+          width="25"
+          class="footer-img"
+        />
+        <p class="footer-desc">Developed by Renchester Ramos</p></a
+      >
+    </footer>
+
+    <div class="overlay hidden"></div>
+  </body>
+</html>
