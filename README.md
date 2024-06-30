@@ -1,3 +1,5 @@
+## Cloned from https://github.com/renchester/top-todo-list
+
 ## The Odin Project
 
 # Project: To-do list
@@ -19,6 +21,17 @@ Features:
 
 4. _Authentication and Cloud Storage_
    The app uses Firebase services (authentication and Firestore) to store user data in the cloud.
+   **Note**If you want to run this web app on your laptop, you need to create a Firebase app and get the SDK API Keys. See https://firebase.google.com/docs/web/setup for more information. After creating your own Firebase app, you should export the keys as environment variables. For example, I add these statements in my .zshrc
+```
+    export FBASE_API_KEY="<PUT_YOUR_FBASE_KEY_HERE>"
+    export FBASE_AUTH_DOMAIN="<PUT_YOUR_AUTH_DOMAIN_HERE>.firebaseapp.com"
+    export FBASE_PROJECT_ID="<PUT_YOUR_FBASE_PROJECT_ID_HERE>"
+    export FBASE_STORAGE_BUCKET="<PUT_YOUR_FBASE_STORAGE_BUCKET_NAME_HERE>.appspot.com"
+    export FBASE_MESSAGING_SENDER_ID="<PUT_YOUR_MESSAGING_SENDER_ID_HERE>"
+    export FBASE_APP_ID="<PUT_YOUR_FBASE_APP_ID_HERE>"
+```
+    You also need to enable your own sign-in method in Firebase console for authentication. I enabled Google sign-in so that I can sign in with my Google account. See https://firebase.google.com/docs/auth/web/google-signin for more information. 
+    One more thing, you need to create a Cloud Storage bucket so that your to-do list items can be persisted. See https://firebase.google.com/docs/storage/web/start for more details.
 
    The
 
