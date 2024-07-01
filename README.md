@@ -63,6 +63,9 @@ In order to setup and work on this project on your own, you will need to:
 5. To run dockerized app (See https://dev.to/karanpratapsingh/dockerize-your-react-app-4j2e for reference)
    `docker-compose -f docker-compose.dev.yml up -d`
 
+6. To stop dockerized app
+   `docker-compose -f docker-compose.dev.yml stop`
+
 ### Deployed on GitHub Pages
 
 Deployed on [GitHub Pages](https://pages.github.com/)
