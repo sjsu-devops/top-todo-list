@@ -52,13 +52,13 @@ In order to setup and work on this project on your own, you will need to:
    `git clone https://github.com/renchester/top-todo-list.git`
 
 2. Once you have cloned this project, you can install the required dependencies by using:  
-   `npm install`
+   `yarn install`
 
 3. A live demo of the project can be started by using:  
-   `npm start`
+   `yarn start`
 
 4. Distribution files can be produced using:  
-   `npm run build`
+   `yarn run build`
 
 ### Deployed on GitHub Pages
 
