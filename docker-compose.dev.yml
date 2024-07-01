@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: top-todo-dev
+    image: top-todo-dev
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 9001:9001
