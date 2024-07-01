@@ -60,6 +60,9 @@ In order to setup and work on this project on your own, you will need to:
 4. Distribution files can be produced using:  
    `yarn run build`
 
+5. To run dockerized app (See https://dev.to/karanpratapsingh/dockerize-your-react-app-4j2e for reference)
+   `docker-compose -f docker-compose.dev.yml up -d`
+
 ### Deployed on GitHub Pages
 
 Deployed on [GitHub Pages](https://pages.github.com/)
