@@ -65,8 +65,9 @@ In order to setup and work on this project on your own, you will need to:
 6. To run dockerized app (See https://dev.to/karanpratapsingh/dockerize-your-react-app-4j2e for reference)
    `docker compose -f docker-compose.dev.yml up -d`
    Web app can be accessed at http://localhost:9001
+   **Note** Containerized app is having problem with firebase connecting via websocket. Don't know why yet
 
-7. To stop dockerized app
+8. To stop dockerized app
    `docker compose -f docker-compose.dev.yml stop`
 
 ### Deployed on GitHub Pages
